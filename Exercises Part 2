@@ -1,0 +1,119 @@
+    "Rohit": {"marks": 90, "attendance": 60}
+}
+for name, details in students.items():
+    marks = details["marks"]
+    attendance = details["attendance"]
+    if attendance < 75:
+        result = "Not Eligible"
+    elif marks >= 80:
+        result = "Distinction"
+    elif marks >= 60:
+        result = "First Division"
+    elif marks >= 40:
+        result = "Pass"
+    else:
+        result = "Fail"
+    print(name, result)
+
+
+# ============================================================
+# PART 4: LIST COMPREHENSION
+# ============================================================
+
+# Q1. Numbers greater than 50
+numbers = [20, 55, 30, 80, 45, 90, 10]
+result = [n for n in numbers if n > 50]
+print("\nList Q1:", result)
+
+# Q2. Numbers between 20 and 50 (inclusive)
+numbers = [10, 25, 35, 60, 45, 15, 50, 70]
+result = [n for n in numbers if 20 <= n <= 50]
+print("List Q2:", result)
+
+# Q3. Numbers divisible by both 3 and 5
+numbers = [10, 15, 20, 30, 45, 50, 60, 75]
+result = [n for n in numbers if n % 3 == 0 and n % 5 == 0]
+print("List Q3:", result)
+
+# Q4. Names having more than 4 characters
+names = ["Amit", "Rahul", "Neha", "Rohit", "Sneha"]
+result = [name for name in names if len(name) > 4]
+print("List Q4:", result)
+
+# Q5. Names starting with A
+names = ["Amit", "Rahul", "Ankit", "Neha", "Arjun", "Rohit"]
+result = [name for name in names if name.startswith("A")]
+print("List Q5:", result)
+
+# Q6. Extract vowels from a string
+text = "programming"
+result = [ch for ch in text if ch in "aeiou"]
+print("List Q6:", result)
+
+# Q7. Extract digits from a string
+data = "Python123Programming456"
+result = [ch for ch in data if ch.isdigit()]
+print("List Q7:", result)
+
+# Q8. Replace even/odd numbers with labels
+numbers = [10, 15, 20, 25, 30]
+result = ["Even" if n % 2 == 0 else "Odd" for n in numbers]
+print("List Q8:", result)
+
+# Q9. Replace negative numbers with 0
+numbers = [10, -5, 20, -8, 30, -2]
+result = [n if n >= 0 else 0 for n in numbers]
+print("List Q9:", result)
+
+# Q10. 10% discount for prices >= 1000, otherwise 5%
+prices = [500, 1200, 800, 2000, 1500]
+result = [p * 0.90 if p >= 1000 else p * 0.95 for p in prices]
+print("List Q10:", result)
+
+# Q11/Q12. Employees earning more than Rs. 50,000
+employees = [
+    {"name": "Amit", "salary": 45000},
+    {"name": "Rahul", "salary": 60000},
+    {"name": "Neha", "salary": 75000},
+    {"name": "Rohit", "salary": 35000}
+]
+result = [e["name"] for e in employees if e["salary"] > 50000]
+print("List Q11/Q12:", result)
+
+# Q13. Products costing more than Rs. 1000
+prices = [499, 1299, 799, 2499, 999, 1599]
+result = [p for p in prices if p > 1000]
+print("List Q13:", result)
+
+# Q14. 20% discount only on products costing more than Rs. 2000
+prices = [500, 1200, 2500, 3000, 1500, 5000]
+result = [p * 0.80 for p in prices if p > 2000]
+print("List Q14:", result)
+
+# Q15. Find deposits and withdrawals
+transactions = [5000, -2000, 3000, -1000, 7000, -500]
+deposits = [t for t in transactions if t > 0]
+withdrawals = [t for t in transactions if t < 0]
+print("List Q15 deposits:", deposits)
+print("List Q15 withdrawals:", withdrawals)
+
+# Q16. Names of students who scored 60 or more
+students = [
+    {"name": "Amit", "marks": 75},
+    {"name": "Rahul", "marks": 45},
+    {"name": "Neha", "marks": 90},
+    {"name": "Rohit", "marks": 55}
+]
+result = [s["name"] for s in students if s["marks"] >= 60]
+print("List Q16:", result)
+
+# Q17. Names of employees from IT department
+employees = [
+    {"name": "Amit", "department": "IT"},
+    {"name": "Rahul", "department": "HR"},
+    {"name": "Neha", "department": "IT"},
+    {"name": "Rohit", "department": "Sales"}
+]
+result = [e["name"] for e in employees if e["department"] == "IT"]
+print("List Q17:", result)
+
